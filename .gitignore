@@ -1,0 +1,8 @@
+# IntelliJ project files
+.idea
+*.jpeg
+*.html
+geekhub-ishop.iml
+node_modules
+bower_components
+public/vendor

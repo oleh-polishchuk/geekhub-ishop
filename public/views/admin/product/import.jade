@@ -1,0 +1,14 @@
+.panel.panel-default
+    .panel-heading Import
+
+    .panel-body
+        .row
+            .col-sm-12
+                div.form-group
+                    label.image JSON:
+                    input.form-control(type='file', file-model="data" accept='application/json')
+                button.btn.btn-default(ng-click="import()") Import
+
+
+    .panel-footer
+        .row

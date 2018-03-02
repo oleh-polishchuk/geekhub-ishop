@@ -1,0 +1,32 @@
+.panel.panel-default
+    .panel-heading New
+
+    .panel-body
+        .row
+            .col-sm-6
+                img(src='{{imageUrl}}', style='height: 210px; width: 100%; display: block;')
+                div.form-group
+                    label.image Image:
+                    input.form-control(type='file', file-model="model.image.data" accept='image/jpeg')
+                button.btn.btn-default(ng-click="api.upload.image()") Upload and continue
+            .col-sm-6
+                form
+                    div.form-group
+                        label.name Name:
+                        input.form-control(ng-model="model.product.name")
+                    div.form-group
+                        label(for='groups') Groups list (select one):
+                        select#groups.form-control(ng-options='group as group.name for group in groups ', ng-model='model.product.group')
+                    div.form-group
+                        label.price Price:
+                        input.form-control(ng-model="model.product.price", type="number")
+                    div.form-group
+                        label.description Description:
+                        textarea.form-control(ng-model="model.product.description" rows='7')
+
+    .panel-footer
+        .row
+            .col-sm-1
+                button.btn.btn-success(ng-click="api.product.save()") Add
+            .col-sm-1
+                button.btn.btn-default(ng-click="api.clearInputs()") Clear

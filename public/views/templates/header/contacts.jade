@@ -1,0 +1,39 @@
+.row
+    .col-sm-6
+        h3
+            | Phone:
+        ul
+            li
+                | 095 444 03 24
+            li
+                | 095 444 03 24
+            li
+                | 095 444 03 24
+        h3
+            | E-mail:
+        p
+            | foo@bar.com
+        h3
+            | Mode of operation:
+        p
+            | Mode of operation:
+            | Monday-Friday - from 9:00 to 19:00
+            | Sat - from 9:00 to 14:00
+            | Sun - closed
+
+    .col-sm-6
+        p
+            | Do you have questions about our products? Or you want to send us a message? Use the feedback form!
+        form(role='form')
+            .form-group
+                label(for='name') Name:
+                input#name.form-control(type='text')
+            .form-group
+                label(for='email') E-mail:
+                input#email.form-control(type='text')
+            .form-group
+                label(for='msg') Message:
+                textarea#msg.form-control
+            .checkbox
+                label
+            button.btn.btn-default(type='submit') Send

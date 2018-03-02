@@ -1,0 +1,28 @@
+.panel.panel-default
+    .panel-heading List
+    .panel-body
+        table.table.table-bordered
+            tbody
+                tr
+                    th
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    th ID
+                    th Article
+                    th Name
+                    th Price
+                    th Description
+                    th Info
+                tr(ng-repeat="key in products")
+                    td
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    td {{key._id}}
+                    td
+                    td {{key.name}}
+                    td {{key.price}}
+                    td {{key.description}}
+                    td
+                        a.btn.btn-info(href='#/api/product/{{key._id}}', role='button') View

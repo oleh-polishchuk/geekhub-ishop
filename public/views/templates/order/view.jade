@@ -1,0 +1,81 @@
+.panel.panel-default
+    .panel-heading Order # {{ order._id }}
+
+    .panel-body
+        .page-header
+            h1
+                | {{ user.name }}
+                small , {{ order.deliveryAddress }}
+
+        table.table.table-bordered
+            tr
+                td ID
+                td
+                    div(ng-if='!editMode') {{ order._id }}
+                    div(ng-if='editMode')
+                        input.form-control(ng-model='order._id')
+            tr
+                td Email
+                td
+                    div(ng-if='!editMode') {{ user.email }}
+                    div(ng-if='editMode')
+                        input.form-control(ng-model='user.email')
+            tr
+                td Delivery address
+                td
+                    div(ng-if='!editMode') {{ order.deliveryAddress }}
+                    div(ng-if='editMode')
+                        input.form-control(ng-model='order.deliveryAddress')
+            tr
+                td Mobile telephone
+                td
+                    div(ng-if='!editMode') {{ order.telephone }}
+                    div(ng-if='editMode')
+                        input.form-control(ng-model='order.telephone')
+            tr
+                td Comments
+                td
+                    div(ng-if='!editMode') {{ order.comments }}
+                    div(ng-if='editMode')
+                        textarea.form-control(ng-model='order.comments')
+
+        .page-header
+            h1
+                | {{ order.items.length }} Items
+                small
+
+        table.table.table-bordered
+            tbody
+                tr
+                    th
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    th ID
+                    th Name
+                    th Price, $
+                    th Quantity
+                    th View
+                tr(ng-repeat="key in order.items")
+                    td
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    td {{key._id}}
+                    td {{key._name}}
+                    td {{key._price}}
+                    td {{key._quantity}}
+                    td
+                        a.btn.btn-info(href='#/api/product/{{key._id}}', role='button') View
+
+        .page-header
+            h1
+                | Total: {{ order.total }} $
+                small
+
+    .panel-footer
+        .row
+            .col-sm-1
+                button.btn.btn-success(ng-click="editMode = !editMode") Edit
+            .col-sm-1
+                button.btn.btn-default(ng-click="checkoutOrder(order._id)") Checkout

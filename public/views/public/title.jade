@@ -1,0 +1,18 @@
+br
+#myCarousel.carousel.slide(data-ride='carousel')
+    // Indicators
+    ol.carousel-indicators
+        li.active(data-target='#myCarousel', data-slide-to='0')
+        li(data-target='#myCarousel', data-slide-to='1')
+        li(data-target='#myCarousel', data-slide-to='2')
+        li(data-target='#myCarousel', data-slide-to='3')
+    // Wrapper for slides
+    .carousel-inner(role='listbox')
+        .item.active
+            img(src='images/carousel/slide_1.jpg', alt='Chania', height='150px')
+        .item
+            img(src='images/carousel/slide_2.jpg', alt='Chania', height='350px')
+        .item
+            img(src='images/carousel/slide_3.jpg', alt='Flower', height='350px')
+        .item
+            img(src='images/carousel/slide_2.jpg', alt='Chania', height='350px')

@@ -1,0 +1,29 @@
+.alert.alert-warning(ng-if="!isSuccess")
+    strong Warning!
+    |  {{msg}}
+
+form.form-horizontal
+    .form-group
+        .col-sm-offset-2.col-sm-10
+            h2 Registration form
+    .form-group
+        label.control-label.col-sm-2(for='name') Name:
+        .col-sm-10
+            input#name.form-control(ng-model='u.name', type='text', placeholder='Enter name')
+    .form-group
+        label.control-label.col-sm-2(for='email') Email:
+        .col-sm-10
+            input#email.form-control(ng-model='u.email', type='email', placeholder='Enter email')
+    .form-group
+        label.control-label.col-sm-2(for='pwd') Password:
+        .col-sm-10
+            input#pwd.form-control(ng-model='u.password', type='password', placeholder='Enter password')
+    .form-group
+        .col-sm-offset-2.col-sm-10
+            .checkbox
+                label
+                    input(type='checkbox')
+                    |  Remember me
+    .form-group
+        .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(ng-click='user.create()') Submit

@@ -1,0 +1,23 @@
+{
+  "name": "GeekHub-iShop",
+
+  "port": 3000,
+
+  "context": "http://localhost:3000",
+
+  "mongo": {
+    "url": "mongodb://localhost:27017/GeekHub-iShop",
+    "poolSize": 5,
+    "user": {
+      "name": "Admin",
+      "email": "admin@ishop.geekhub.com",
+      "password": "admin",
+      "role": "admin"
+    }
+  },
+
+  "product": {
+    "defaultImageURL": "/images/products/default.image.jpg",
+    "defaultDescription": "No description."
+  }
+}

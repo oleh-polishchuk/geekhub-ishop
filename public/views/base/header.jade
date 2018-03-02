@@ -1,0 +1,28 @@
+header
+    nav.navbar.navbar-default
+        .container-fluid
+            ul.nav.navbar-nav
+                li
+                    a(href='#/about') ABOUT US
+                li
+                    a(href='#/delivery') PAYMENT AND DELIVERY
+                li
+                    a(href='#/guarantee') GUARANTEE
+                li
+                    a(href='#/contacts') CONTACTS
+                li
+                    a(href='#/comments') COMMENTS
+
+            ul.nav.navbar-nav.navbar-right
+                li(ng-if="!isAuthenticated")
+                    a(href='/login')
+                        span.glyphicon.glyphicon-log-in
+                        |  Login
+                li(ng-if="isAuthenticated")
+                    a(href='#/')
+                        span.glyphicon.glyphicon-user
+                        | &nbsp{{ globalUser.name }}
+                li(ng-if="isAuthenticated")
+                    a(href='/logout')
+                        span.glyphicon.glyphicon-log-out
+                        |  Logout

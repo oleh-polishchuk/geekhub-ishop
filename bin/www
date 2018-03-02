@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var InitService = require('../services/init'),
+    async = require('async');
+
+async.series([
+    InitService.config,
+    InitService.db,
+    InitService.admin,
+    InitService.passport,
+    function () {
+        // Initialize server
+        require('../server').init(function (port) {
+            console.log('Magic happens on port ' + port);
+        })
+    }
+]);

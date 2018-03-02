@@ -1,0 +1,40 @@
+.panel.panel-default
+    .panel-heading Wishlist
+
+    .panel-body
+        .alert.alert-success(ng-if="wishlist.length == 0")
+            strong Sorry!
+            |  Your wishlist is empty!
+        table.table.table-bordered(ng-if="wishlist.length > 0")
+            tbody
+                tr
+                    th
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    th ID
+                    th Group
+                    th Name
+                    th Price
+                    th Description
+                    th Info
+                    th Cart
+                tr(ng-repeat="key in wishlist")
+                    td
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    td {{key.id}}
+                    td {{key.group}}
+                    td {{key.name}}
+                    td {{key.price}}
+                    td {{key.description}}
+                    td
+                        a.btn.btn-info(href='#/api/product/{{key.id}}', role='button') View
+                    td
+                        ngcart-addtocart(id='{{key.id}}' name='{{key.name}}', price='{{ key.price }}', quantity='1', quantity-max='5') Add to Cart
+
+    .panel-footer
+        .row
+            .col-sm-1
+                button.btn.btn-success(ng-click="clearWishList()", ng-if="wishlist.length > 0") Clear

@@ -1,0 +1,38 @@
+.panel.panel-default
+    .panel-heading Cart
+    .panel-body
+        div
+            ngcart-cart
+            hr
+
+            // if user is not logged
+            form.form-horizontal(ng-if="!globalUser.id")
+                .form-group
+                    label.control-label.col-sm-2(for='name') Name:
+                    .col-sm-10
+                        input#name.form-control(ng-model="user.name" type='text', name='name', placeholder='Your name')
+                .form-group
+                    label.control-label.col-sm-2(for='email') Email:
+                    .col-sm-10
+                        input#email.form-control(ng-model="user.email", type='email', name='email', placeholder='Your email')
+
+            form.form-horizontal
+                .form-group
+                    label.control-label.col-sm-2(for='deliveryAddress') Delivery address:
+                    .col-sm-10
+                        input#deliveryAddress.form-control(ng-model="user.deliveryAddress", type='text', name='deliveryAddress', placeholder='Your delivery address')
+                .form-group
+                    label.control-label.col-sm-2(for='tel') Contact telephone:
+                    .col-sm-10
+                        input#tel.form-control(ng-model="user.telephone", type='number', name='tel', placeholder='Your mobile telephone')
+                .form-group
+                    label.control-label.col-sm-2(for='comments') Comments:
+                    .col-sm-10
+                        textarea#comments.form-control(ng-model="user.comments", name='comments', placeholder='Your comments')
+                .form-group
+                    .col-sm-2(ng-if="globalUser.id")
+                        hr
+                        a.btn.btn-info(href='#/api/order/history/{{globalUser.id}}', role='button') Purchase line
+                    .col-sm-10
+                        hr
+                        button.btn.btn-success(type="submit" ng-click="placeOrder()") Place an order

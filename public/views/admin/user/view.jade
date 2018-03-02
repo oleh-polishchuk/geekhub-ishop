@@ -1,0 +1,42 @@
+.panel.panel-default
+    .panel-heading {{ user.name }}
+
+    .panel-body
+        .row
+            .col-sm-12
+                table.table.table-bordered
+                    tr
+                        td ID
+                        td
+                            div {{ user._id }}
+                    tr
+                        td Created at
+                        td
+                            div {{ user.createdAt }}
+                    tr
+                        td Name
+                        td
+                            div(ng-if='!editMode') {{ user.name }}
+                            div(ng-if='editMode')
+                                input.form-control(ng-model='user.name')
+                    tr
+                        td Email
+                        td
+                            div(ng-if='!editMode') {{ user.email }}
+                            div(ng-if='editMode')
+                                input.form-control(ng-model='user.email')
+                    tr
+                        td Role
+                        td
+                            div(ng-if='!editMode') {{ user.role }}
+                            div(ng-if='editMode')
+                                input.form-control(ng-model='user.role')
+
+    .panel-footer
+        .row
+            .col-sm-1
+                button.btn.btn-default(ng-click="editMode = !editMode") Edit
+            .col-sm-1
+                button.btn.btn-default(ng-click="deleteUserById(user._id)") Delete
+            .col-sm-1
+                button.btn.btn-default(ng-click="updateUserById(user); editMode = !editMode") Update

@@ -1,0 +1,28 @@
+.panel.panel-default
+    .panel-heading History
+    .panel-body
+        .alert.alert-warning(role='alert', ng-show='orders.length == 0')
+            | History list is empty
+        table.table.table-bordered(ng-show='orders.length > 0')
+            tbody
+                tr
+                    th
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    th Status
+                    th CreatedAt
+                    th Delivery address
+                    th Items
+                    th View
+                tr(ng-repeat="key in orders")
+                    td
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    td {{key.status}}
+                    td {{key.createdAt}}
+                    td {{key.deliveryAddress}}
+                    td {{key.items.length}}
+                    td
+                        a.btn.btn-info(href='#/api/order/{{key._id}}', role='button') View

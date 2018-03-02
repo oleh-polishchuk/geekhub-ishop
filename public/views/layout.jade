@@ -1,0 +1,21 @@
+doctype html
+html(ng-app="app")
+    head
+        include ./base/head
+
+        include ./templates/cart/ng-cart
+
+        // Another scripts
+        block scripts
+    body
+        include ./base/header
+
+        .container
+            div(ng-controller='MainController')
+                include ./body/menu/top
+
+            include ./body/menu/main
+
+            include ./body/content/content
+
+        include ./base/footer

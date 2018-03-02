@@ -1,0 +1,8 @@
+extends ./../../layout
+block content
+    .container(ng-controller="UserController")
+        button.btn.btn-default(ng-click='user.create()') Create
+        button.btn.btn-success(ng-click='user.read()') Read
+        button.btn.btn-success(ng-click='user.read("56dc25e642278b94119cb722")') Read by ID
+        button.btn.btn-info(ng-click='user.update("56dc25e642278b94119cb722")') Update by ID
+        button.btn.btn-danger(ng-click='user.delete("56dc25e642278b94119cb722")') Delete by ID

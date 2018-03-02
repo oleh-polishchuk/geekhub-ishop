@@ -1,0 +1,50 @@
+doctype html
+
+html
+    head
+        title iShop
+
+        // Bootstrap
+        link(rel='stylesheet', href='./vendor/css/bootstrap.css')
+        link(rel='stylesheet', href='./vendor/css/bootstrap-theme.css')
+
+        // Fonts
+        link(rel='stylesheet', href='./vendor/css/font-awesome.css')
+
+        // jQuery & Bootstrap
+        script(src='./vendor/js/jquery.js')
+        script(src='./vendor/js/bootstrap.js')
+    body
+        .container(style='margin: 10%')
+            .jumbotron
+                form.form-horizontal(action='/register', method='POST')
+                    .form-group
+                        a.col-sm-2(href='/#/')
+                            img(src='images/logo.png', alt='Mountain View', style='width:100%')
+                        .col-sm-10
+                            h2 Sing Up
+                    .form-group
+                        label.control-label.col-sm-2(for='name') Name:
+                        .col-sm-10
+                            input#name.form-control(type='text', name='name', placeholder='Your name')
+                    .form-group
+                        label.control-label.col-sm-2(for='email') Email:
+                        .col-sm-10
+                            input#email.form-control(type='email', name='email', placeholder='Your email')
+                    .form-group
+                        label.control-label.col-sm-2(for='pwd') Password:
+                        .col-sm-10
+                            input#pwd.form-control(type='password', name='password', placeholder='Your password')
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            .checkbox
+                                label
+                                    input(type='checkbox')
+                                    |  Remember me
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            | Do you have an account?&nbsp
+                            a(href='/login') Login
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            button.btn.btn-default(type='login') Register

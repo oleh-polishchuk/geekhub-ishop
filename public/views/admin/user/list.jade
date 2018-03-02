@@ -1,0 +1,26 @@
+.panel.panel-default
+    .panel-heading List
+    .panel-body
+        table.table.table-bordered
+            tbody
+                tr
+                    th
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    th CreatedAt
+                    th Email
+                    th Name
+                    th Role
+                    th View
+                tr(ng-repeat="key in users")
+                    td
+                        .checkbox
+                            label
+                                input(type='checkbox', value='')
+                    td {{key.createdAt}}
+                    td {{key.email}}
+                    td {{key.name}}
+                    td {{key.role}}
+                    td
+                        a.btn.btn-info(href='#/api/user/{{key._id}}', role='button') View
